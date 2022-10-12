@@ -16,5 +16,10 @@ namespace PRelacionamentoTabelaClasses
         [ForeignKey("Team")]//tabela Team
         public int TeamId { get; set; }//propriedade que referencia a chave primária
         public virtual Team Team { get; set; }//1 equipe sempre tem 2 carros; virtual permite a sobescrição do objeto
+
+        public override string ToString()
+        {
+            return "Name: "+this.Name+"\nEquipe: "+this.Team.Name; 
+        }
     }
 }
